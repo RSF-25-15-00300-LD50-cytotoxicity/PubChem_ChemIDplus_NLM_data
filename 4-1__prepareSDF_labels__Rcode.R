@@ -2,6 +2,7 @@ library(tidyverse)
 
 # Prepare the SDF suitable for building the qualitative SAR models using the data obtained from PubChem and
 # Acute Toxicity Estimate Values FROM https://unece.org/sites/default/files/2023-07/GHS%20Rev10e.pdf
+# NB, this dataset is multiclass
 
 # Input
 # Compounds
