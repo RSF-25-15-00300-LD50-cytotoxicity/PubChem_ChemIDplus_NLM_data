@@ -1,1 +1,1 @@
-
+Preclinical in silico assessement of drugs' safety is a process aimed to reduce the time and resources, which are needed to make sure that drug candidate is safe enough to be studied in clinic. Toxicity prediction is an important part of it. Here is the code and notes for the retrival of the data on the toxicity of chemical compounds towards animal models from PubChem [1d].
