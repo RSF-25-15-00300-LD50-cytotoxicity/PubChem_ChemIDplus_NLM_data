@@ -13,6 +13,8 @@ Also, pay attention to the PubChem's Programmatic Access Policy: https://pubchem
 
 To extarct and process the data the following tools were used: R programming language ecosystem [1t] in general and Tidyverse [2t], JSONlite library  [3t].
 
+Also, a tool called "makemna.exe", which was developed earlier in the LSFBDD (https://en.ibmc.msk.ru/departments?view=article&id=26:laboratory-of-structure-function-based-drug-design&catid=10:data), was used to generate MNA descriptors [Filimonov, Dmitrii, et al. "Chemical similarity assessment through multilevel neighborhoods of atoms: definition and comparison with the other descriptors." Journal of chemical information and computer sciences 39.4 (1999): 666-670.]. MNA descriptors are used to aggregate the data on similar structures in some scripts. Makemna is proprietary and is not provided. But, it should be noted that in similar pipelines MNA descriptors could be replaced by the other descriptors for the sake of aggregation.
+
 This repo is a part of the report for ongoing project RSF 25-15-00300, thus, due to the shortage of time, all the explanations for the data processing and results' descriptions will be quite short and will be provided along with the code. 
 
 Data References:
