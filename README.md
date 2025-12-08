@@ -9,6 +9,8 @@ https://www.nlm.nih.gov/web_policies.html#copyright
 
 Source: National Library of Medicine
 
+Also, pay attention to the PubChem's Programmatic Access Policy: https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access
+
 To extarct and process the data the following tools were used: R programming language ecosystem [1t] in general and Tidyverse [2t], JSONlite library  [3t].
 
 This repo is a part of the report for ongoing project RSF 25-15-00300, thus, due to the shortage of time, all the explanations for the data processing and results' descriptions will be quite short and will be provided along with the code. 
