@@ -2,7 +2,7 @@ library(tidyverse)
 
 # Input
 # Compounds
-sdf_raw <- read_file("C:/Users/XPS/Documents/RSCF/25-15-00300_preclinTox_DAF/PubChem_LD50/data/PubChem_compound_cache_rukLgqoMz7D4nkeHxf8OoA5QnDBosCu-UZsw8kqKIvNKkx4_records_SD.SDF") |>
+sdf_raw <- read_file("C:/.../data/PubChem_compound_cache_rukLgqoMz7D4nkeHxf8OoA5QnDBosCu-UZsw8kqKIvNKkx4_records_SD.SDF") |>
 				#str_replace_all("\n", "\r\n") |>
 				str_trim() |>
 				as_tibble() |>
@@ -24,14 +24,14 @@ mna_cids <- sdf_raw |> select(mna_cid, all_cid) |>
 					   mutate(all_cid = str_trim(all_cid)) |>
 					   distinct()
 # Read the data
-data_raw <- read_tsv("C:/Users/XPS/Documents/RSCF/25-15-00300_preclinTox_DAF/PubChem_LD50/data/h300_cid.tsv") |>
+data_raw <- read_tsv("C:/.../data/h300_cid.tsv") |>
 					mutate(cid = as.character(cid)) |>
 					select(-hnid) |>
 					separate_wider_delim(warning, delim = ": ", names = c("code", "label")) |>
 					inner_join(mna_cids, by = c("cid" = "all_cid")) |>
 					select(mna_cid, code, label)
 # Read the list of codes having pictograms downloaded from: https://pubchem.ncbi.nlm.nih.gov/ghs/
-pictogram <- read_tsv("C:/Users/XPS/Documents/RSCF/25-15-00300_preclinTox_DAF/PubChem_LD50/raw_data/GHS_picts.tsv") |>
+pictogram <- read_tsv("C:/.../raw_data/GHS_picts.tsv") |>
 					mutate(hazard_label_pict = case_when(
 							Pictogram == "GHS05" ~ "corrosives",
 							Pictogram == "GHS06" ~ "acute toxicity",
@@ -88,4 +88,5 @@ sdf_hlp <- sdf_proc_hlp |> mutate(id_rec = "\r\n>  <CID>\r\n", allid_rec = "\r\n
 							 unite("record", mol:end_rec, sep = "")
 
 ## Export SDFs
-write_lines(str_c("", sdf_hlp[[1]]), "C:/Users/XPS/Documents/RSCF/25-15-00300_preclinTox_DAF/PubChem_LD50/data/sdfs/hazard_labels_PC_CIDP_NLM__ghs.SDF")
+write_lines(str_c("", sdf_hlp[[1]]), "C:/.../data/sdfs/hazard_labels_PC_CIDP_NLM__ghs.SDF")
+
