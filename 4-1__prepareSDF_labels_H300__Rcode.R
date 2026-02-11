@@ -31,6 +31,8 @@ data_raw <- read_tsv("C:/.../data/h300_cid.tsv") |>
 					inner_join(mna_cids, by = c("cid" = "all_cid")) |>
 					select(mna_cid, code, label)
 # Read the list of codes having pictograms downloaded from: https://pubchem.ncbi.nlm.nih.gov/ghs/
+# Only records having pictograms are considered
+# Only GHS05, GHS06, GHS07, GHS08 are considered
 pictogram <- read_tsv("C:/.../raw_data/GHS_picts.tsv") |>
 					mutate(hazard_label_pict = case_when(
 							Pictogram == "GHS05" ~ "corrosives",
@@ -89,4 +91,5 @@ sdf_hlp <- sdf_proc_hlp |> mutate(id_rec = "\r\n>  <CID>\r\n", allid_rec = "\r\n
 
 ## Export SDFs
 write_lines(str_c("", sdf_hlp[[1]]), "C:/.../data/sdfs/hazard_labels_PC_CIDP_NLM__ghs.SDF")
+
 
